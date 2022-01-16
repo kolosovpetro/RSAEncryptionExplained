@@ -1,10 +1,5 @@
 # RSA Encryption Explained
 
-<p align="center">
-  <img src="img/rsa_logo.png" width="1200"  alt="RSA Logo"/>
-</p>
-
-
 [![Build PDF](https://github.com/kolosovpetro/RSAEncryptionExplained/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/kolosovpetro/RSAEncryptionExplained/actions/workflows/build.yml/badge.svg)
 [![Build and Deploy PDF](https://github.com/kolosovpetro/RSAEncryptionExplained/actions/workflows/build-and-deploy-pdf.yml/badge.svg)](https://github.com/kolosovpetro/RSAEncryptionExplained/actions/workflows/build-and-deploy.yml/badge.svg)
 ![contributors count](https://img.shields.io/github/contributors/kolosovpetro/RSAEncryptionExplained)
