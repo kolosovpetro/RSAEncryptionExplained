@@ -1,10 +1,10 @@
 # RSA Encryption: Behind the scenes
 
-Naive and simple explanation of the RSA encryption algorithm.
+Simple explanation on the problematics and main idea behind the Rivest-Shamir-Adleman (RSA) encryption.
 
-[![Build PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build.yml/badge.svg)
-[![Build and Deploy PDF](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy-pdf.yml/badge.svg)](https://github.com/kolosovpetro/github-latex-template/actions/workflows/build-and-deploy.yml/badge.svg)
-![contributors count](https://img.shields.io/github/contributors/kolosovpetro/github-latex-template)
+[![Build PDF](https://github.com/kolosovpetro/RSAEncryptionExplained/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/kolosovpetro/RSAEncryptionExplained/actions/workflows/build.yml/badge.svg)
+[![Build and Deploy PDF](https://github.com/kolosovpetro/RSAEncryptionExplained/actions/workflows/build-and-deploy-pdf.yml/badge.svg)](https://github.com/kolosovpetro/RSAEncryptionExplained/actions/workflows/build-and-deploy.yml/badge.svg)
+![contributors count](https://img.shields.io/github/contributors/kolosovpetro/RSAEncryptionExplained)
 
 ## Build and run in Intellij IDEA
 
