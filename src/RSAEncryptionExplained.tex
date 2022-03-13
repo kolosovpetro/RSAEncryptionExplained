@@ -138,49 +138,68 @@
         \item $d$ is stands for decryption, private key
     \end{itemize}
     Now only one problem remains for the Alice -- is to define a pair of the keys $(e, d)$.
-    So, assume that Alice defines two positive integer constants: $e$ is exponent and $N = P \cdot Q$ is public key.
-    Alice sends the pair of $(e, N)$ to the Bob so that Bob is able to encrypt his secret message.
-    Bob encrypts the secret message $m$ using the one-way function $f(m) = m^e \bmod N$.
-    Then Bob sends encrypted message $C$ back to the Alice.
-    Given $C$ Alice must fetch the Bob's message $m$.
-    In order to decrypt $C$, Alice has to compute
+    Alice knows that Bob encrypts his message $m$ as follows
     \[
-        C^d \bmod N = m^{ed} \bmod N \equiv m,
+        m^e \bmod N = C
     \]
-    where $e$ for encryption and $d$ for decryption.
-    Now the problem is to define such $d$ that it is hard to the listener to fetch it.
-    In order to define the secret $d$, Alice chooses two enough big prime numbers: $P, \; Q$, let's say around 150 digits
-    both.
-    Then Alice multiplies these two prime numbers in order to get $N$
+    To decrypt the message $C$ Alice must fetch a constant $d$ such that reverts the exponentiation of the
+    secret message $m$
+    \begin{eqnarray*}
+        C^d = m \bmod N \\
+        m^{ed} \bmod N = m \bmod N
+    \end{eqnarray*}
+    Firstly, Alice defines a public constant $N$ as a product of two large prime numbers $P, Q$
     \[
         N = P \cdot Q
     \]
-    The $N$ is around 300 digits.
-    Now Alice can share $N$ with anyone, since it takes decades to find its prime factorization by the fundamental problem
-    of prime factorization.
-    Next, it is very important to know such a function, which depends on the knowledge of factorization of $N$.
-    Such function is an Euler's totient function.
+    so that it is hard to compute a factorization.
+
+    But how to fetch the secret constant $d$ to decrypt?
+    The Euler's totient theorem helps.
+%    So, assume that Alice defines two positive integer constants: $e$ is exponent and $N = P \cdot Q$ is public key.
+%    Alice sends the pair of $(e, N)$ to the Bob so that Bob is able to encrypt his secret message.
+%    Bob encrypts the secret message $m$ using the one-way function $f(m) = m^e \bmod N$.
+%    Then Bob sends encrypted message $C$ back to the Alice.
+%    Given $C$ Alice must fetch the Bob's message $m$.
+%    In order to decrypt $C$, Alice has to compute
+%    \[
+%        C^d \bmod N = m^{ed} \bmod N \equiv m,
+%    \]
+%    where $e$ for encryption and $d$ for decryption.
+%    Now the problem is to define such $d$ that it is hard to the listener to fetch it.
+%    In order to define the secret $d$, Alice chooses two enough big prime numbers: $P, \; Q$, let's say around 150 digits
+%    both.
+%    Then Alice multiplies these two prime numbers in order to get $N$
+%    \[
+%        N = P \cdot Q
+%    \]
+%    The $N$ is around 300 digits.
+%    Now Alice can share $N$ with anyone, since it takes decades to find its prime factorization by the fundamental problem
+%    of prime factorization.
+%    Next, it is very important to know such a function, which depends on the knowledge of factorization of $N$.
+%    Such function is an Euler's totient function.
     Given a number $N$ and its prime factorization $p_1^{e_1}\cdot p_2^{e_2} \cdots p_k^{e_k}$, the Euler's totient function
     $\phi(N)$ is defined as
     \[
         \phi(N) = (p_1^{e_1} - p_1^{e_1 - 1}) \cdot (p_2^{e_2} - p_2^{e_2 - 1}) \cdots (p_k^{e_k} - p_k^{e_k - 1})
     \]
-    In particular, for positive number $M$ such that its factorization is $p1 \cdot p2$, the $\phi(M)$ is
+    In particular, for the positive number $N$ such that its factorization is $p1 \cdot p2$, the $\phi(M)$ is
     \[
-        \phi(M) = (p_1 -1) \cdot (p_2 - 1)
+        \phi(N) = (p_1 -1) \cdot (p_2 - 1)
     \]
-    Euler's theorem relates the modular division and exponent as follows, given number $m$, then
+    Euler's theorem relates the modular division and exponent as follows.
+    Given number $m$ then
     \[
         m^{\phi(N)} = 1 \bmod N
     \]
     It means that reminder of division $m^{\phi(N)}$ by $N$ is always 1.
     By the equality $1^K = 1$
     \[
-        M^{K \cdot \phi(N)} = 1 \bmod N
+        m^{K \cdot \phi(N)} = 1 \bmod N
     \]
     If we multiply both parts by $M$, we get
     \[
-        M \cdot M^{K \cdot \phi(N)} = M^{K \cdot \phi(N) + 1} = M \bmod N
+        m \cdot m^{K \cdot \phi(N)} = m^{K \cdot \phi(N) + 1} = m \bmod N
     \]
     It follows that Alice is able to define the secret $d$ as follows
     \begin{gather*}
