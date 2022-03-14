@@ -53,21 +53,22 @@
         ~\caption{Symmetric encryption real life example.}\label{fig:figure}
     \end{figure}
 
-    The problem here is that Alice and Bob must exchange the keys securely, for instance by means of DH key exchange.
+    The problem here is that Alice, Bob, Mark, Steven and Alex must exchange the keys securely, for instance by means
+    of Diffie-Hellman key exchange.
 
     Much more simpler is to think about secured communication channel that in terms of asymmetric encryption.
     \begin{quote}
         \textbf{Asymmetric encryption} -- is an encryption such that a message is encrypted using public key and
         decrypted using private key.
     \end{quote}
-    The real life example would be if Alice shares with all the actors not the secret key, but opened lock.
+    The real life example would be if Alice shares with all the actors not the secret key, but \textbf{opened lock}.
     Still Alice keeps the key with herself, but now she doesn't worry that anyone would lose it so that key exchange must be repeated.
     \begin{figure}[H]
         \centering
         \includegraphics[width=1\textwidth]{Asymmetric_encryption}
         ~\caption{Asymmetric encryption real life example.}\label{fig:figure2}
     \end{figure}
-    So that the Bob, Mark, Steven and Alex have received an opened lock from Alice.
+    Therefore, the Bob, Mark, Steven and Alex have received an \textbf{opened lock} or \textbf{public key} from the Alice.
     Now anyone of them is able to write secret message to the Alice simply putting it to the chest closing by the lock
     received from Alice so that only Alice can open it.
     However, such a simple idea requires complex number theory approach.
@@ -77,13 +78,19 @@
         a random input.
     \end{quote}
 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{One_Way_Functions}
+        ~\caption{One-way function, analogy with paints}\label{fig:figure3}
+    \end{figure}
 
-    \section{Mathematics behind RSA}\label{sec:mathematics-behind-rsa}
+
+    \section{Mathematics behind the RSA}\label{sec:mathematics-behind-rsa}
     For instance, the function
     \begin{equation*}
         f(m) = m^e \bmod N = C, \quad (e, N) \mathrm{\; are \; public \; constants}, \quad m \; \mathrm{is \; secret}
     \end{equation*}
-    is one-awy function because it is easy to compute $C$ given $m$, but it is hard to compute $m$ given $C$.
+    is one-way function because it is easy to compute $C$ given $m$, but it is hard to compute $m$ given $C$.
     The constants $(e, N)$ may be interpreted as an Alice's opened lock, whereas $m$ is a secret message from Bob.
     Note that constants
     \begin{itemize}
