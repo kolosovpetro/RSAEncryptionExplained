@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{rivest1978method}
+{Rivest, Ronald L. and Shamir, Adi and Adleman, Leonard}.
+\newblock {A method for obtaining digital signatures and public-key
+  cryptosystems}.
+\newblock {\em Communications of the ACM}, 21(2):120--126, 1978.
+\newblock \url{https://web.williams.edu/Mathematics/lg5/302/RSA.pdf}.
+
+\bibitem{cocks1973note}
+Clifford~C. Cocks.
+\newblock A note on non-secret encryption.
+\newblock {\em CESG Memo}, 1973.
+
+\end{thebibliography}
