@@ -14,3 +14,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add GitVersion config
 - Update readme
 - Add build scripts
+- Fix PDF images warnings
