@@ -20,12 +20,13 @@ jobs:
   build-pdf:
     uses: kolosovpetro/github-latex-template/.github/workflows/build-pdf-template.yml@main
     with:
-      file_name: 'GithubLatexTemplate'
+      file_name: 'RSAEncryptionExplained'
       runs_on: 'ubuntu-latest'
       workflow_name: 'Build PDF'
       build_assets_path: |
-        src/GithubLatexTemplate.tex
-        src/GithubLatexTemplate.bbl
-        src/GithubLatexTemplate.bib
+        src/RSAEncryptionExplained.tex
+        src/RSAEncryptionExplained.bbl
+        src/RSAEncryptionExplained.bib
         src/sections
+        src/img
       working_directory_for_latex: 'src'
