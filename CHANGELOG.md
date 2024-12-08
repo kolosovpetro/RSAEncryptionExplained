@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Convert images to PNG format
 - Minor grammar fixes
+- Add URL
+- Add MSC subjects
+- Add title
 
 ## [1.0.1] - 2024-12-08
 
