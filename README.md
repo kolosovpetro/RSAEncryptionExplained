@@ -1,6 +1,7 @@
 # RSA Encryption: Behind the scenes
 
-Simple explanation on the problematics and main idea behind the Rivest-Shamir-Adleman (RSA) encryption.
+Simple explanation on the symmetric encryption problematics
+and main idea behind the Rivest-Shamir-Adleman (RSA) encryption.
 
 ## GitHub Actions used
 
