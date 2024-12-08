@@ -4,24 +4,28 @@ on:
   push:
     branches:
       - develop
+      - master
+      - main
+      - release/*
   pull_request:
     branches:
-      - develop
+      - main
+      - master
+  workflow_dispatch:
+
+env:
+  ACTIONS_RUNNER_DEBUG: false
 
 jobs:
-  build-resume:
-    runs-on: ubuntu-latest
-    name: Create document
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Convert to pdf
-        id: convert-to-pdf
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: RSAEncryptionExplained.tex
-          working_directory: src
-      - uses: actions/upload-artifact@v2
-        with:
-          name: PDF
-          path: RSAEncryptionExplained.pdf
+  build-pdf:
+    uses: kolosovpetro/github-latex-template/.github/workflows/build-pdf-template.yml@main
+    with:
+      file_name: 'GithubLatexTemplate'
+      runs_on: 'ubuntu-latest'
+      workflow_name: 'Build PDF'
+      build_assets_path: |
+        src/GithubLatexTemplate.tex
+        src/GithubLatexTemplate.bbl
+        src/GithubLatexTemplate.bib
+        src/sections
+      working_directory_for_latex: 'src'
